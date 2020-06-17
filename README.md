@@ -40,3 +40,13 @@ insert into book (title, isbn) values ('Twilight', '1234-A'),
     ('Chronicles of Narina', '1233-B'),
     ('Watership Down', '4560X');
 ```
+
+### Delete item
+```
+delete from book where id = 4;
+```
+
+## update a row
+```
+update author set first_name='Clive Staples' where id = 2;
+```
