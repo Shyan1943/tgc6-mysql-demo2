@@ -50,3 +50,9 @@ delete from book where id = 4;
 ```
 update author set first_name='Clive Staples' where id = 2;
 ```
+
+## Add in new column
+```
+ALTER TABLE book
+ADD language varchar(100);
+```
