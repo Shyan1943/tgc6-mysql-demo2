@@ -56,3 +56,52 @@ update author set first_name='Clive Staples' where id = 2;
 ALTER TABLE book
 ADD language varchar(100);
 ```
+
+## SELECTING
+```
+/* Select ALL columns from the table */
+select * from author
+```
+
+```
+/* Select only a few columns from the table */
+select first_name, last_name from author
+```
+
+```
+/* Select specific rows from the table */
+select * from author where nationality like "UK";
+select first_name, last_name from author where nationality like "UK"
+```
+
+```
+/* compunds */
+/* we are join multiple criteria with AND/OR */
+select * from author where first_name like "Lewis" and nationality like "UK"
+select * from author where first_name like "Lewis" or nationality like "UK
+```
+```
+/* wild cards */
+/* select all authors whose first name starts with "lew"
+select * from author where first_name like "lew%"
+/* select all authors whose first name ends with "lew"
+select * from author where first_name like "%lew"
+/* select all authors whose first name contains "lew" anywhere */
+select * from author where first_name like "%lew%"
+```
+
+## JOINS
+
+Join employees on office code where the emplyoee's officecode matches the office code in the offices table.
+THEN select the last name, first name, city, country, addressLine and addressLine 2 columns
+```
+SELECT lastName, firstName, city, country, addressLine1, addressLine2 
+FROM employees INNER JOIN offices ON employees.officeCode = offices.officeCode
+```
+
+Selct all emplyoees where their offices are in USA
+```
+SELECT * FROM employees JOIN offices
+ ON employees.officeCode = offices.officeCode
+ WHERE country="USA" 
+```
